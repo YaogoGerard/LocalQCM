@@ -1,12 +1,15 @@
-# <img src="assets/logo.png" width="40" height="40" style="vertical-align:middle;margin-right:8px;"> Local QCM
-
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
-![WebRTC](https://img.shields.io/badge/WebRTC-333333?logo=webrtc&logoColor=white)
-![PeerJS](https://img.shields.io/badge/PeerJS-00B4A0?logo=websocket&logoColor=white)
-![QR Code](https://img.shields.io/badge/QR_Code-FF6B35?logo=qrcode&logoColor=white)
-![Licence](https://img.shields.io/badge/Licence-MIT-green)
+<div align="center">
+  <img src="assets/logo.png" width="120" height="120" alt="Local QCM"><br>
+  <strong style="font-size:2em;">Local QCM</strong>
+  <br><br>
+  <img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black" alt="JavaScript">
+  <img src="https://img.shields.io/badge/WebRTC-333333?logo=webrtc&logoColor=white" alt="WebRTC">
+  <img src="https://img.shields.io/badge/PeerJS-00B4A0?logo=websocket&logoColor=white" alt="PeerJS">
+  <img src="https://img.shields.io/badge/QR_Code-FF6B35?logo=qrcode&logoColor=white" alt="QR Code">
+  <img src="https://img.shields.io/badge/Licence-MIT-green" alt="Licence MIT">
+</div>
 
 > **Plateforme de quiz interactif en réseau local, sans connexion Internet.**
 
@@ -424,4 +427,4 @@ Local QCM a pour objectif de proposer une solution simple, gratuite et accessibl
 
 # 📜 Licence
 
-Projet open source — Licence à définir.
+MIT
