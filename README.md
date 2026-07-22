@@ -1,5 +1,13 @@
 # <img src="assets/logo.png" width="40" height="40" style="vertical-align:middle;margin-right:8px;"> Local QCM
 
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![WebRTC](https://img.shields.io/badge/WebRTC-333333?logo=webrtc&logoColor=white)
+![PeerJS](https://img.shields.io/badge/PeerJS-00B4A0?logo=websocket&logoColor=white)
+![QR Code](https://img.shields.io/badge/QR_Code-FF6B35?logo=qrcode&logoColor=white)
+![Licence](https://img.shields.io/badge/Licence-MIT-green)
+
 > **Plateforme de quiz interactif en réseau local, sans connexion Internet.**
 
 Local QCM permet à un professeur de créer et lancer des questionnaires interactifs. Les élèves rejoignent la session depuis leur smartphone via un **QR Code** ou un **code PIN**, puis répondent en temps réel directement depuis leur navigateur.
@@ -82,6 +90,83 @@ Pendant la partie :
 - les réponses sont transmises instantanément
 - les scores sont calculés automatiquement
 - le classement final est affiché
+
+---
+
+# 🎮 Deroulement d'une partie
+
+```mermaid
+sequenceDiagram
+    participant P as Professeur (lancer.html)
+    participant E as Eleve (index.html)
+
+    Note over P: Importe le fichier JSON
+    P->>P: Genere code PIN + QR
+    P->>P: Cree serveur PeerJS (localqcm-PIN)
+
+    E->>E: Ouvre index.html
+    E->>E: Entre le code PIN
+    E->>P: { type: "join", name: "Alice" }
+    P->>P: Ajoute Alice a la liste
+
+    P->>E: { type: "start", total: 5 }
+    P->>E: { type: "question", question: {...} }
+    Note over E: Affiche la question + reponses
+    E->>P: { type: "answer", answerIndex: 2 }
+
+    Note over P: Timer 15s
+    P->>E: { type: "reveal", correctIndex: 0 }
+    Note over E: Affiche correction (vert/rouge)
+
+    P->>E: { type: "question", question: {...} }
+    Note over P,E: ... jusqu'a la derniere question
+
+    P->>E: { type: "results", scores: {...} }
+    Note over P,E: Podium + classement final
+```
+
+**Echanges detailles :**
+
+| Message | Emetteur | Destinataire | Contenu |
+|---|---|---|---|
+| **join** | Eleve | Professeur | `{ type: "join", name: "Alice" }` |
+| **start** | Professeur | Tous | `{ type: "start", total: 5 }` |
+| **question** | Professeur | Tous | `{ type: "question", question: {...}, index: 0 }` |
+| **answer** | Eleve | Professeur | `{ type: "answer", answerIndex: 2 }` |
+| **reveal** | Professeur | Tous | `{ type: "reveal", correctIndex: 0 }` |
+| **results** | Professeur | Tous | `{ type: "results", scores: {...} }` |
+
+Le professeur diffuse les questions et la correction a tout le monde. Chaque eleve envoie uniquement sa reponse.
+
+---
+
+# 🔌 Comprendre WebRTC
+
+WebRTC est une technologie qui permet a deux navigateurs de communiquer **directement** sans passer par un serveur central.
+
+## Comment ca marche dans Local QCM ?
+
+```
+Etape 1 - Signalisation (besoin internet)
+  Eleve ----> PeerJS Cloud ----> Professeur
+  "Je veux rejoindre localqcm-1234"
+
+Etape 2 - Connexion directe (plus besoin d'internet)
+  Eleve <========================> Professeur
+  Donnees en peer-to-peer via WebRTC
+```
+
+**1. Signalisation (PeerJS Cloud)** : quand un eleve scanne le QR, PeerJS contacte son serveur cloud pour trouver le professeur. Cette etape necessite internet, mais elle dure moins d'une seconde.
+
+**2. Data Channel (WebRTC)** : une fois que les deux navigateurs se sont trouves, ils ouvrent un canal de communication direct. Les donnees (questions, reponses) voyagent desormais en peer-to-peer, sans passer par internet.
+
+**3. Pas de donnees stockees** : PeerJS Cloud ne stocke rien. Il sert juste d'intermediaire le temps que les deux pairs se decouvrent. Ensuite, tout passe en local.
+
+## Pourquoi un serveur HTTP ?
+
+Le serveur HTTP (`python3 -m http.server`) sert uniquement les fichiers HTML, CSS et JS au navigateur. C'est comme ouvrir un fichier local, mais en reseau.
+
+Local QCM a besoin de ce serveur car les navigateurs n'autorisent pas WebRTC en `file://`.
 
 ---
 
@@ -316,6 +401,18 @@ Ordinateur professeur
 Le serveur HTTP sert uniquement les fichiers statiques.
 
 Les données du quiz et les réponses restent dans le réseau local.
+
+---
+
+# 👥 Contributeurs
+
+Groupe 18 — Projet Local QCM :
+
+- **TAMINI** Dofinizoumou Jean Esaïe
+- **BAKO** Alice Carine
+- **KIEMA** Espérance Wendkuni
+- **YAOGO** Gérard Windpagnangdé
+- **KPIELE** Some Kadidia Augustine
 
 ---
 
