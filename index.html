@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local QCM — Quiz interactif en réseau local</title>
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/rejoindre.css">
+</head>
+<body>
+
+  <!-- ─── HEADER : barre de navigation fixe ─── -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="header-logo">
+        <img src="assets/logo.png" alt="Local QCM">
+        <span>Local QCM</span>
+      </a>
+      <nav class="header-nav">
+        <a href="#fonctionnement">Fonctionnement</a>
+        <a href="#avantages">Avantages</a>
+        <a href="https://github.com/YaogoGerard/LocalQCM" target="_blank" rel="noopener" class="nav-github">
+          <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          <span>GitHub</span>
+        </a>
+        <a href="pages/creer.html" class="btn btn-primary btn-sm">Créer un quiz</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════════
+         HERO : PRESENTATION + FORMULAIRE DE CONNEXION
+         ═══════════════════════════════════════════════ -->
+    <section class="hero">
+      <div class="hero-bg">
+        <div class="blob2"></div>
+      </div>
+      <div class="hero-inner">
+
+        <!-- ─── Colonne gauche : texte de presentation ─── -->
+        <div class="hero-content" id="heroContent">
+          <h1>Quiz interactifs,<br><span>en réseau local</span></h1>
+          <p class="hero-desc">
+            Fini les problèmes de connexion et les écrans illisibles.
+            Local QCM connecte directement la classe au professeur,
+            sans passer par internet.
+          </p>
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>Jusqu'à 50</strong>
+              <span>élèves</span>
+            </div>
+            <div class="stat">
+              <strong>Même Wi-Fi</strong>
+              <span>pas d'internet</span>
+            </div>
+            <div class="stat">
+              <strong>Temps réel</strong>
+              <span>instantané</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── Colonne droite : formulaire de connexion etudiant ─── -->
+        <div class="hero-join" id="heroJoin">
+          <div class="join-card">
+            <h2>Rejoindre une partie</h2>
+            <form class="join-form" id="joinForm">
+              <div class="input-group">
+                <label for="pseudo">Pseudo</label>
+                <input type="text" id="pseudo" name="pseudo" placeholder="Entrez votre pseudo" autocomplete="off" required>
+              </div>
+              <div class="input-group">
+                <label for="code">Code de la partie</label>
+                <input type="text" id="code" name="code" class="code-input" placeholder="••••" maxlength="4" inputmode="numeric" autocomplete="off" required>
+              </div>
+              <button type="submit" class="btn btn-primary btn-join">Rejoindre</button>
+              <p class="join-error" id="joinError"></p>
+            </form>
+          </div>
+        </div>
+
+        <!-- ─── Interface etudiant (affichee apres connexion PeerJS) ─── -->
+        <div id="studentGame" style="display:none;width:100%;">
+
+          <!-- Etat : attente dans le salon -->
+          <div id="stepWait" class="join-step">
+            <div class="join-card-wide waiting-card">
+              <div class="spinner"></div>
+              <h2>Connexion etablie</h2>
+              <p>En attente que le professeur lance la partie...</p>
+            </div>
+          </div>
+
+          <!-- Etat : question en cours -->
+          <div id="stepPlay" class="join-step" style="display:none;">
+            <div class="game-topbar">
+              <span class="game-q-counter" id="qCounter">Question 1</span>
+            </div>
+            <div class="game-question">
+              <h2 id="questionText">Question</h2>
+            </div>
+            <div class="game-answers" id="gameAnswers"></div>
+            <div class="game-feedback" id="gameFeedback"></div>
+          </div>
+
+          <!-- Etat : resultats finaux -->
+          <div id="stepResults" class="join-step" style="display:none;">
+            <div class="join-card-wide results-card">
+              <h2>Partie terminee</h2>
+              <div class="final-score" id="finalScore">0 pts</div>
+              <p id="finalRank"></p>
+              <div class="results-detail" id="resultsDetail"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         ESPACE ENSEIGNANT : cartes Creer / Importer / Lancer
+         ═══════════════════════════════════════════════ -->
+    <section class="section section-alt">
+      <div class="section-inner">
+        <h2 class="section-title">Espace enseignant</h2>
+        <p class="section-sub">Créez, importez et lancez vos questionnaires</p>
+        <div class="cards-grid">
+          <a href="pages/creer.html" class="tile">
+            <img src="assets/icons/tools.png" alt="Créer">
+            <span>Créer un Quiz</span>
+          </a>
+          <a href="pages/importer.html" class="tile">
+            <img src="assets/icons/upload.png" alt="Importer">
+            <span>Importer</span>
+            <span class="tile-sub">un fichier existant</span>
+          </a>
+          <a href="pages/lancer.html" class="tile">
+            <img src="assets/icons/rocket.png" alt="Lancer">
+            <span>Lancer</span>
+            <span class="tile-sub">une partie</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         FONCTIONNEMENT : etapes pour utiliser la plateforme
+         ═══════════════════════════════════════════════ -->
+    <section class="section" id="fonctionnement">
+      <div class="section-inner">
+        <h2 class="section-title">Comment ça marche ?</h2>
+        <p class="section-sub">Trois étapes simples pour un quiz interactif et fluide</p>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <img src="assets/icons/tools.png" alt="">
+            <h3>Le professeur crée</h3>
+            <p>Créez votre questionnaire ou importez un fichier existant. Un code à 4 chiffres et un QR Code sont générés automatiquement.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <img src="assets/icons/touch.png" alt="">
+            <h3>Les élèves scannent</h3>
+            <p>Scannez le QR Code ou entrez le code. La question s'affiche directement sur votre écran, plus besoin de lever la tête vers le tableau.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <img src="assets/icons/rocket.png" alt="">
+            <h3>Tout le monde joue</h3>
+            <p>Les réponses partent directement vers le PC du professeur. Résultats et classement en temps réel, sans aucune latence.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         AVANTAGES : pourquoi choisir Local QCM
+         ═══════════════════════════════════════════════ -->
+    <section class="section" id="avantages">
+      <div class="section-inner">
+        <h2 class="section-title">Pourquoi Local QCM ?</h2>
+        <p class="section-sub">Conçu pour résoudre les vrais problèmes de la classe</p>
+        <div class="features">
+          <div class="feature">
+            <div class="feature-icon">
+              <img src="assets/icons/touch.png" alt="">
+            </div>
+            <h3>Questions sur chaque écran</h3>
+            <p>Fini les élèves qui ne voient pas le tableau. Chaque participant lit la question et les réponses confortablement sur son propre smartphone.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">
+              <img src="assets/icons/download.png" alt="">
+            </div>
+            <h3>Zéro saturation Wi-Fi</h3>
+            <p>Aucun fichier lourd à charger depuis internet. Les échanges sont des lignes de texte brut de moins de 1 Ko, même à 50 élèves.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">
+              <img src="assets/icons/buttons.png" alt="">
+            </div>
+            <h3>Mode clair & accessible</h3>
+            <p>Une interface lumineuse et épurée, conçue pour un confort de lecture maximal en environnement scolaire.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">
+              <img src="assets/icons/rocket.png" alt="">
+            </div>
+            <h3>Liaison directe</h3>
+            <p>Pas de serveur externe. Les smartphones se connectent directement au PC du professeur. Ca fonctionne meme sans internet.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">
+              <img src="assets/icons/bookmark.png" alt="">
+            </div>
+            <h3>Hébergement simplifié</h3>
+            <p>Les fichiers sont servis rapidement depuis le cloud. Aucune installation complexe à gérer.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">
+              <img src="assets/icons/add.png" alt="">
+            </div>
+            <h3>Import & export</h3>
+            <p>Créez vos questionnaires dans le formulaire ou importez des fichiers existants. Réutilisez-les d'une année sur l'autre.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="Local QCM">
+        <span>Local QCM</span>
+      </div>
+      <p class="footer-text">
+        Quiz interactif en réseau local.<br>
+        Concu par des etudiants du <a href="https://bit.bf" target="_blank" rel="noopener">Burkina Institute of Technology</a>
+      </p>
+      <p class="footer-copy">&copy; 2026 Local QCM</p>
+    </div>
+  </footer>
+
+  <script src="js/animate.js"></script>
+  <script src="js/peerjs.min.js"></script>
+  <script src="js/etudiant.js"></script>
+</body>
+</html>
