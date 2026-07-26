@@ -1471,25 +1471,40 @@ body.dark-mode .game-topbar {
 
 body.dark-mode .game-timer {
   color: #fbbf24;
+  background: rgba(31, 41, 55, 0.6);
 }
 
 body.dark-mode .game-timer.warning {
   color: #ef4444;
+  background: rgba(239, 68, 68, 0.15);
+}
+
+body.dark-mode .game-question {
+  background: rgba(31, 41, 55, 0.5);
+  border-color: rgba(148, 163, 184, 0.08);
 }
 
 body.dark-mode .game-question h2 {
   color: #f1f5f9;
 }
 
+body.dark-mode .game-q-counter {
+  color: var(--text-secondary);
+  background: rgba(31, 41, 55, 0.5);
+  backdrop-filter: blur(8px);
+}
+
 body.dark-mode .game-controls .btn-next {
   background: rgba(30, 41, 59, 0.6);
-  border-color: rgba(148, 163, 184, 0.15);
+  border: 1px solid rgba(148, 163, 184, 0.15);
   color: var(--text-primary);
+  box-shadow: none;
 }
 
 body.dark-mode .game-controls .btn-next:hover {
   background: rgba(1, 88, 182, 0.2);
   border-color: #0158b6;
+  box-shadow: none;
 }
 
 body.dark-mode .game-stats .stat-bar {
@@ -1562,10 +1577,12 @@ body.dark-mode .game-feedback {
 }
 
 body.dark-mode .btn-back {
+  background: rgba(55, 65, 81, 0.5);
   color: var(--text-secondary) !important;
 }
 
 body.dark-mode .btn-back:hover {
+  background: rgba(55, 65, 81, 0.8);
   color: var(--text-primary) !important;
 }
 
@@ -1648,29 +1665,6 @@ body.dark-mode .lobby-players {
   border-color: rgba(148, 163, 184, 0.08);
 }
 
-body.dark-mode .game-q-counter {
-  color: var(--text-secondary);
-}
-
-body.dark-mode .game-timer {
-  color: #fbbf24;
-  background: rgba(31, 41, 55, 0.6);
-}
-
-body.dark-mode .game-timer.warning {
-  color: #ef4444;
-  background: rgba(239, 68, 68, 0.15);
-}
-
-body.dark-mode .game-question {
-  background: rgba(31, 41, 55, 0.5);
-  border-color: rgba(148, 163, 184, 0.08);
-}
-
-body.dark-mode .game-question h2 {
-  color: #f1f5f9;
-}
-
 body.dark-mode .game-stats {
   background: rgba(13, 165, 40, 0.1);
   border-color: rgba(13, 165, 40, 0.15);
@@ -1723,14 +1717,6 @@ body.dark-mode .score-table tr:first-child td {
 
 body.dark-mode .waiting-card p {
   color: var(--text-secondary);
-}
-
-body.dark-mode .game-q-counter {
-  background: rgba(31, 41, 55, 0.5);
-}
-
-body.dark-mode .game-question {
-  background: rgba(31, 41, 55, 0.5);
 }
 
 body.dark-mode .final-rank {
