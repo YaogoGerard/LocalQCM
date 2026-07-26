@@ -1224,8 +1224,20 @@ body.dark-mode .stat {
   border-color: rgba(148, 163, 184, 0.15);
 }
 
+body.dark-mode .stat:nth-child(1) {
+  background: rgba(30, 58, 138, 0.3);
+}
+
+body.dark-mode .stat:nth-child(2) {
+  background: rgba(20, 83, 45, 0.3);
+}
+
+body.dark-mode .stat:nth-child(3) {
+  background: rgba(15, 118, 110, 0.3);
+}
+
 body.dark-mode .stat span {
-  color: var(--text-secondary);
+  color: #cbd5e1;
 }
 
 body.dark-mode .section {
