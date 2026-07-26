@@ -1,0 +1,29 @@
+{
+  "title": "Culture generale",
+  "author": "Professeur",
+  "questions": [
+    {
+      "text": "Quelle est la capitale du Burkina Faso ?",
+      "answers": [
+        { "text": "Ouagadougou", "correct": true },
+        { "text": "Bobo-Dioulasso", "correct": false }
+      ]
+    },
+    {
+      "text": "Combien de planetes dans le systeme solaire ?",
+      "answers": [
+        { "text": "7", "correct": false },
+        { "text": "8", "correct": true },
+        { "text": "9", "correct": false }
+      ]
+    },
+    {
+      "text": "Quel langage est utilise pour le style des pages web ?",
+      "answers": [
+        { "text": "HTML", "correct": false },
+        { "text": "JavaScript", "correct": false },
+        { "text": "CSS", "correct": true }
+      ]
+    }
+  ]
+}
