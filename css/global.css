@@ -1154,13 +1154,13 @@ img {
    ════════════════════════════════════════ */
 
 body.dark-mode {
-  --bg-body: #0f172a;
-  --bg-overlay: rgba(15, 23, 42, 0.88);
+  --bg-body: #111827;
+  --bg-overlay: rgba(17, 24, 39, 0.88);
   --text-primary: #e2e8f0;
   --text-secondary: #94a3b8;
-  --card-bg: rgba(30, 41, 59, 0.9);
-  --header-bg: rgba(15, 23, 42, 0.92);
-  --border-color: #334155;
+  --card-bg: rgba(31, 41, 55, 0.9);
+  --header-bg: rgba(17, 24, 39, 0.92);
+  --border-color: #374151;
 }
 
 body.dark-mode {
