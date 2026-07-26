@@ -1568,3 +1568,190 @@ body.dark-mode .btn-back {
 body.dark-mode .btn-back:hover {
   color: var(--text-primary) !important;
 }
+
+/* ─── importer.css / creer.html overrides ─── */
+
+body.dark-mode .page-header p {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .upload-zone {
+  background: linear-gradient(135deg, rgba(30, 41, 55, 0.6), rgba(15, 23, 42, 0.5));
+  border-color: rgba(148, 163, 184, 0.2);
+}
+
+body.dark-mode .upload-zone:hover,
+body.dark-mode .upload-zone.dragover {
+  border-color: #0158b6;
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.5), rgba(30, 41, 55, 0.6));
+}
+
+body.dark-mode .upload-title {
+  color: #e2e8f0;
+}
+
+body.dark-mode .editor-meta {
+  background: rgba(31, 41, 55, 0.7);
+  border-color: rgba(148, 163, 184, 0.08);
+}
+
+body.dark-mode .questions-header h2 {
+  color: #f1f5f9;
+}
+
+body.dark-mode .question-card-header .q-num {
+  color: #60a5fa;
+}
+
+body.dark-mode .btn-icon {
+  background: rgba(55, 65, 81, 0.6);
+  color: #9ca3af;
+}
+
+body.dark-mode .btn-icon:hover {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+body.dark-mode .answers-group {
+  border-left-color: rgba(148, 163, 184, 0.2);
+}
+
+body.dark-mode .answer-row .radio-marker {
+  border-color: rgba(148, 163, 184, 0.3);
+}
+
+body.dark-mode .answer-row .radio-marker.correct {
+  border-color: #4ade80;
+  background: linear-gradient(135deg, #16a34a, #4ade80);
+}
+
+body.dark-mode .answer-row input[type="text"] {
+  background: rgba(15, 23, 42, 0.6);
+  border-color: var(--border-color);
+  color: #e2e8f0;
+}
+
+body.dark-mode .answer-row input[type="text"]:focus {
+  border-color: #0158b6;
+  background: rgba(15, 23, 42, 0.8);
+}
+
+body.dark-mode .add-answer-btn {
+  opacity: 0.8;
+}
+
+/* ─── lancer.css overrides ─── */
+
+body.dark-mode .lobby-players {
+  background: rgba(31, 41, 55, 0.7);
+  border-color: rgba(148, 163, 184, 0.08);
+}
+
+body.dark-mode .game-q-counter {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .game-timer {
+  color: #fbbf24;
+  background: rgba(31, 41, 55, 0.6);
+}
+
+body.dark-mode .game-timer.warning {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.15);
+}
+
+body.dark-mode .game-question {
+  background: rgba(31, 41, 55, 0.5);
+  border-color: rgba(148, 163, 184, 0.08);
+}
+
+body.dark-mode .game-question h2 {
+  color: #f1f5f9;
+}
+
+body.dark-mode .game-stats {
+  background: rgba(13, 165, 40, 0.1);
+  border-color: rgba(13, 165, 40, 0.15);
+  color: #4ade80;
+}
+
+body.dark-mode .game-stats .stat-bar span {
+  color: #4ade80;
+}
+
+body.dark-mode .podium-item .rank {
+  color: #f1f5f9;
+}
+
+body.dark-mode .podium-item.gold {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(180, 83, 9, 0.15));
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+body.dark-mode .podium-item.silver {
+  background: linear-gradient(135deg, rgba(148, 163, 184, 0.2), rgba(100, 116, 139, 0.15));
+  border-color: rgba(148, 163, 184, 0.2);
+}
+
+body.dark-mode .podium-item.bronze {
+  background: linear-gradient(135deg, rgba(217, 119, 6, 0.2), rgba(146, 64, 14, 0.15));
+  border-color: rgba(217, 119, 6, 0.25);
+}
+
+body.dark-mode .score-table {
+  background: rgba(31, 41, 55, 0.5);
+}
+
+body.dark-mode .score-table th {
+  background: rgba(55, 65, 81, 0.5);
+  color: var(--text-secondary);
+}
+
+body.dark-mode .score-table td {
+  color: var(--text-primary);
+  border-color: rgba(148, 163, 184, 0.08);
+}
+
+body.dark-mode .score-table tr:first-child td {
+  color: #f1f5f9;
+  background: rgba(13, 165, 40, 0.15);
+}
+
+/* ─── rejoindre.css overrides ─── */
+
+body.dark-mode .waiting-card p {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .game-q-counter {
+  background: rgba(31, 41, 55, 0.5);
+}
+
+body.dark-mode .game-question {
+  background: rgba(31, 41, 55, 0.5);
+}
+
+body.dark-mode .final-rank {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .results-detail {
+  color: var(--text-primary);
+}
+
+body.dark-mode .results-detail th {
+  color: var(--text-secondary);
+  border-color: rgba(148, 163, 184, 0.15);
+}
+
+body.dark-mode .results-detail td {
+  color: var(--text-primary);
+  border-color: rgba(148, 163, 184, 0.08);
+}
+
+body.dark-mode .results-detail tr.me td {
+  background: rgba(1, 88, 182, 0.2);
+  color: #60a5fa;
+}
