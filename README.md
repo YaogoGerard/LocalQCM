@@ -33,7 +33,7 @@ Aucun serveur distant n'est nécessaire : la communication se fait en **peer-to-
 - ✅ Correction automatique des réponses
 - ✅ Calcul des scores
 - ✅ Classement final des participants
-- ✅ Partage d'appareil : une personne connectée au Wi-Fi peut passer son appareil à une autre pour qu'elle participe à son tour
+- ✅ Partage de connexion : une personne connectée peut activer son point d'accès mobile pour permettre à d'autres de rejoindre le quiz
 - ✅ Fonctionnement sur réseau local
 ---
 
