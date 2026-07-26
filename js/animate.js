@@ -155,4 +155,29 @@
     });
   }
 
+  /* ─── Dark mode toggle ─── */
+  var toggle = doc.getElementById('themeToggle');
+  var sunIcon = toggle && toggle.querySelector('.sun-icon');
+  var moonIcon = toggle && toggle.querySelector('.moon-icon');
+
+  function setTheme(dark) {
+    doc.body.classList.toggle('dark-mode', dark);
+    if (sunIcon) sunIcon.style.display = dark ? 'none' : '';
+    if (moonIcon) moonIcon.style.display = dark ? '' : 'none';
+    try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch {}
+  }
+
+  if (toggle) {
+    toggle.addEventListener('click', function () {
+      setTheme(!doc.body.classList.contains('dark-mode'));
+    });
+  }
+
+  try {
+    var saved = localStorage.getItem('theme');
+    if (saved === 'dark') setTheme(true);
+    else if (saved === 'light') setTheme(false);
+    else if (win.matchMedia && win.matchMedia('(prefers-color-scheme: dark)').matches) setTheme(true);
+  } catch {}
+
 })();

@@ -19,6 +19,8 @@ Aucun serveur distant n'est nécessaire : la communication se fait en **peer-to-
 
 ---
 
+**Groupe 18**
+
 # ✨ Fonctionnalités
 
 - ✅ Création de quiz personnalisés
@@ -410,6 +412,10 @@ Les données du quiz et les réponses restent dans le réseau local.
 # 👥 Contributeurs
 
 Groupe 18 — Projet Local QCM :
+
+**Encadrant :** Dr Lebian Wilfried NIKIEMA
+
+Étudiants :
 
 - **TAMINI** Dofinizoumou Jean Esaïe
 - **BAKO** Alice Carine

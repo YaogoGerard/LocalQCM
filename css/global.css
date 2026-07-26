@@ -184,6 +184,25 @@ img {
   gap: 0.35rem;
 }
 
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: #6b7280;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.theme-toggle:hover {
+  background: rgba(1, 88, 182, 0.08);
+  color: #0158b6;
+}
+
 /* ─── Boutons ─── */
 
 .btn {
@@ -1128,4 +1147,167 @@ img {
   .section-title {
     font-size: 1.5rem;
   }
+}
+
+/* ════════════════════════════════════════
+   MODE SOMBRE
+   ════════════════════════════════════════ */
+
+body.dark-mode {
+  --bg-body: #0f172a;
+  --bg-overlay: rgba(15, 23, 42, 0.88);
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --card-bg: rgba(30, 41, 59, 0.9);
+  --header-bg: rgba(15, 23, 42, 0.92);
+  --border-color: #334155;
+}
+
+body.dark-mode {
+  color: var(--text-primary);
+}
+
+body.dark-mode::before {
+  background: var(--bg-overlay);
+}
+
+body.dark-mode .header {
+  background: var(--header-bg);
+  border-bottom-color: rgba(148, 163, 184, 0.08);
+}
+
+body.dark-mode .hero-bg::before {
+  background:
+    radial-gradient(ellipse 100% 70% at 10% 20%, rgba(1, 88, 182, 0.25) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 60% at 90% 80%, rgba(13, 165, 40, 0.20) 0%, transparent 50%),
+    radial-gradient(ellipse 90% 50% at 70% 10%, rgba(2, 161, 232, 0.20) 0%, transparent 50%),
+    radial-gradient(ellipse 70% 40% at 30% 90%, rgba(32, 215, 208, 0.15) 0%, transparent 50%),
+    linear-gradient(160deg, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.80) 40%, rgba(15, 23, 42, 0.85) 100%);
+}
+
+body.dark-mode .hero-content h1 {
+  color: #f1f5f9;
+}
+
+body.dark-mode .hero-desc,
+body.dark-mode .section-sub,
+body.dark-mode .step p,
+body.dark-mode .feature p {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .join-card {
+  background: var(--card-bg);
+  border-color: rgba(148, 163, 184, 0.1);
+}
+
+body.dark-mode .join-card h2 {
+  color: #f1f5f9;
+}
+
+body.dark-mode .input-group label {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .input-group input {
+  background: rgba(30, 41, 59, 0.8);
+  border-color: var(--border-color);
+  color: #f1f5f9;
+}
+
+body.dark-mode .input-group input:focus {
+  background: rgba(30, 41, 59, 0.95);
+  border-color: #0158b6;
+}
+
+body.dark-mode .stat {
+  border-color: rgba(148, 163, 184, 0.15);
+}
+
+body.dark-mode .stat span {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .section {
+  background: transparent;
+}
+
+body.dark-mode .section-alt {
+  background: linear-gradient(180deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.6) 30%, rgba(30, 41, 59, 0.7) 70%, rgba(15, 23, 42, 0.8));
+}
+
+body.dark-mode .section-title {
+  color: #f1f5f9;
+}
+
+body.dark-mode .step {
+  background: rgba(30, 41, 59, 0.6) !important;
+  border-color: rgba(148, 163, 184, 0.1) !important;
+}
+
+body.dark-mode .step h3 {
+  color: #f1f5f9;
+}
+
+body.dark-mode .step-num {
+  box-shadow: 0 4px 12px rgba(1, 88, 182, 0.4);
+}
+
+body.dark-mode .feature {
+  background: rgba(30, 41, 59, 0.5) !important;
+  border-color: rgba(148, 163, 184, 0.08) !important;
+}
+
+body.dark-mode .feature h3 {
+  color: #f1f5f9;
+}
+
+body.dark-mode .tile {
+  background: rgba(30, 41, 59, 0.5) !important;
+  border-color: rgba(148, 163, 184, 0.12) !important;
+}
+
+body.dark-mode .tile span {
+  color: #f1f5f9;
+}
+
+body.dark-mode .tile-sub {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .header-nav a:not(.btn) {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .header-nav a:not(.btn):hover,
+body.dark-mode .header-nav a:not(.btn).nav-active {
+  color: #60a5fa;
+}
+
+body.dark-mode .header-nav a:not(.btn).nav-active::after {
+  background: #60a5fa;
+}
+
+body.dark-mode .theme-toggle {
+  color: #fbbf24;
+}
+
+body.dark-mode .theme-toggle:hover {
+  color: #f59e0b;
+}
+
+body.dark-mode .btn-back {
+  color: var(--text-secondary) !important;
+}
+
+body.dark-mode .btn-primary {
+  box-shadow: 0 4px 16px rgba(1, 88, 182, 0.25);
+}
+
+body.dark-mode .footer {
+  background: linear-gradient(135deg, rgba(2, 6, 23, 0.98), rgba(15, 23, 42, 0.98));
+}
+
+body.dark-mode .progress-bar {
+  z-index: 999;
 }
