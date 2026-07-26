@@ -1296,10 +1296,6 @@ body.dark-mode .theme-toggle:hover {
   color: #f59e0b;
 }
 
-body.dark-mode .btn-back {
-  color: var(--text-secondary) !important;
-}
-
 body.dark-mode .btn-primary {
   box-shadow: 0 4px 16px rgba(1, 88, 182, 0.25);
 }
@@ -1310,4 +1306,253 @@ body.dark-mode .footer {
 
 body.dark-mode .progress-bar {
   z-index: 999;
+}
+
+body.dark-mode .page-header h1,
+body.dark-mode .page-header h2 {
+  color: #f1f5f9;
+}
+
+body.dark-mode .page-main {
+  color: var(--text-primary);
+}
+
+body.dark-mode .upload-zone {
+  background: rgba(30, 41, 59, 0.5);
+  border-color: rgba(148, 163, 184, 0.15);
+}
+
+body.dark-mode .upload-zone p,
+body.dark-mode .upload-sub {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .editor-card,
+body.dark-mode .question-card {
+  background: rgba(30, 41, 59, 0.6);
+  border-color: rgba(148, 163, 184, 0.1);
+}
+
+body.dark-mode .question-card h3,
+body.dark-mode .editor-card h3,
+body.dark-mode .editor-card label {
+  color: #f1f5f9;
+}
+
+body.dark-mode .question-card input,
+body.dark-mode .editor-card input,
+body.dark-mode .editor-card textarea {
+  background: rgba(15, 23, 42, 0.6);
+  border-color: var(--border-color);
+  color: #f1f5f9;
+}
+
+body.dark-mode .question-card input:focus,
+body.dark-mode .editor-card input:focus,
+body.dark-mode .editor-card textarea:focus {
+  border-color: #0158b6;
+  background: rgba(15, 23, 42, 0.8);
+}
+
+body.dark-mode .answer-row input {
+  background: rgba(15, 23, 42, 0.6);
+  border-color: var(--border-color);
+  color: #f1f5f9;
+}
+
+body.dark-mode .answer-row .correct-badge {
+  background: rgba(13, 165, 40, 0.2);
+  color: #4ade80;
+}
+
+body.dark-mode .btn-add {
+  color: var(--text-secondary);
+  border-color: rgba(148, 163, 184, 0.15);
+}
+
+body.dark-mode .btn-add:hover {
+  border-color: #0158b6;
+  color: #60a5fa;
+}
+
+body.dark-mode .btn-remove {
+  color: #f87171;
+}
+
+body.dark-mode .editor-header .question-num {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .join-card-wide {
+  background: var(--card-bg);
+  border-color: rgba(148, 163, 184, 0.1);
+}
+
+body.dark-mode .join-card-wide h2,
+body.dark-mode .join-card-wide h3 {
+  color: #f1f5f9;
+}
+
+body.dark-mode .join-card-wide p {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .waiting-card .spinner {
+  border-color: rgba(148, 163, 184, 0.2);
+  border-top-color: #0158b6;
+}
+
+body.dark-mode .final-score {
+  color: #fbbf24;
+}
+
+body.dark-mode .results-card p {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .results-detail table {
+  color: var(--text-primary);
+}
+
+body.dark-mode .results-detail th {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .results-detail tr.me td {
+  background: rgba(1, 88, 182, 0.15);
+}
+
+body.dark-mode .game-answer {
+  background: rgba(30, 41, 59, 0.6);
+  border-color: rgba(148, 163, 184, 0.15);
+  color: var(--text-primary);
+}
+
+body.dark-mode .game-answer:hover:not(:disabled) {
+  background: rgba(1, 88, 182, 0.2);
+  border-color: #0158b6;
+}
+
+body.dark-mode .game-answer.selected {
+  background: rgba(1, 88, 182, 0.3);
+  border-color: #0158b6;
+}
+
+body.dark-mode .game-answer.correct {
+  background: rgba(13, 165, 40, 0.25);
+  border-color: #0da528;
+}
+
+body.dark-mode .game-answer.wrong {
+  background: rgba(239, 68, 68, 0.25);
+  border-color: #ef4444;
+}
+
+body.dark-mode .game-answer.reveal-correct {
+  background: rgba(13, 165, 40, 0.25);
+  border-color: #0da528;
+}
+
+body.dark-mode .game-topbar {
+  color: var(--text-primary);
+}
+
+body.dark-mode .game-timer {
+  color: #fbbf24;
+}
+
+body.dark-mode .game-timer.warning {
+  color: #ef4444;
+}
+
+body.dark-mode .game-question h2 {
+  color: #f1f5f9;
+}
+
+body.dark-mode .game-controls .btn-next {
+  background: rgba(30, 41, 59, 0.6);
+  border-color: rgba(148, 163, 184, 0.15);
+  color: var(--text-primary);
+}
+
+body.dark-mode .game-controls .btn-next:hover {
+  background: rgba(1, 88, 182, 0.2);
+  border-color: #0158b6;
+}
+
+body.dark-mode .game-stats .stat-bar {
+  background: rgba(30, 41, 59, 0.6);
+  color: var(--text-primary);
+}
+
+body.dark-mode .podium-item {
+  background: rgba(30, 41, 59, 0.6);
+  border-color: rgba(148, 163, 184, 0.1);
+}
+
+body.dark-mode .podium-item .name {
+  color: #f1f5f9;
+}
+
+body.dark-mode .podium-item .score {
+  color: #fbbf24;
+}
+
+body.dark-mode .score-table {
+  color: var(--text-primary);
+}
+
+body.dark-mode .score-table th {
+  color: var(--text-secondary);
+  border-color: rgba(148, 163, 184, 0.15);
+}
+
+body.dark-mode .score-table td {
+  border-color: rgba(148, 163, 184, 0.08);
+}
+
+body.dark-mode .score-table tr:hover td {
+  background: rgba(1, 88, 182, 0.08);
+}
+
+body.dark-mode .lobby-players h3 {
+  color: #f1f5f9;
+}
+
+body.dark-mode .player-list li {
+  color: var(--text-primary);
+  border-color: rgba(148, 163, 184, 0.08);
+}
+
+body.dark-mode .player-empty {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .lobby-info {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .pin-label {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .pin-code {
+  color: #f1f5f9;
+}
+
+body.dark-mode .qr-box {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(148, 163, 184, 0.15);
+}
+
+body.dark-mode .game-feedback {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .btn-back {
+  color: var(--text-secondary) !important;
+}
+
+body.dark-mode .btn-back:hover {
+  color: var(--text-primary) !important;
 }
