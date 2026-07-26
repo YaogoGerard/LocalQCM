@@ -1,0 +1,97 @@
+{
+  "title": "Quiz simple sur le monde",
+  "author": "IA Collaboratrice",
+  "questions": [
+    {
+      "text": "Quelle est la capitale du Burkina Faso ?",
+      "answers": [
+        { "text": "Bobo-Dioulasso", "correct": false },
+        { "text": "Koudougou", "correct": false },
+        { "text": "Ouagadougou", "correct": true },
+        { "text": "Kaya", "correct": false }
+      ]
+    },
+    {
+      "text": "Quel est le plus grand océan du monde ?",
+      "answers": [
+        { "text": "L'océan Pacifique", "correct": true },
+        { "text": "L'océan Atlantique", "correct": false },
+        { "text": "L'océan Indien", "correct": false },
+        { "text": "L'océan Arctique", "correct": false }
+      ]
+    },
+    {
+      "text": "Quelle est la capitale de la France ?",
+      "answers": [
+        { "text": "Lyon", "correct": false },
+        { "text": "Marseille", "correct": false },
+        { "text": "Nice", "correct": false },
+        { "text": "Paris", "correct": true }
+      ]
+    },
+    {
+      "text": "Quel est le plus haut sommet du monde ?",
+      "answers": [
+        { "text": "Le mont Kilimandjaro", "correct": false },
+        { "text": "Le mont Everest", "correct": true },
+        { "text": "Le mont Blanc", "correct": false },
+        { "text": "Le K2", "correct": false }
+      ]
+    },
+    {
+      "text": "Quel pays est célèbre pour ses grandes pyramides ?",
+      "answers": [
+        { "text": "Le Maroc", "correct": false },
+        { "text": "L'Afrique du Sud", "correct": false },
+        { "text": "L'Égypte", "correct": true },
+        { "text": "Le Kenya", "correct": false }
+      ]
+    },
+    {
+      "text": "Dans quel pays se trouve la ville de Venise ?",
+      "answers": [
+        { "text": "L'Italie", "correct": true },
+        { "text": "L'Espagne", "correct": false },
+        { "text": "La Grèce", "correct": false },
+        { "text": "Le Portugal", "correct": false }
+      ]
+    },
+    {
+      "text": "Quel grand pays est aussi un continent ?",
+      "answers": [
+        { "text": "Le Brésil", "correct": false },
+        { "text": "Le Canada", "correct": false },
+        { "text": "L'Inde", "correct": false },
+        { "text": "L'Australie", "correct": true }
+      ]
+    },
+    {
+      "text": "Quel est le nom du plus long fleuve du monde ?",
+      "answers": [
+        { "text": "Le Mississippi", "correct": false },
+        { "text": "Le Nil", "correct": true },
+        { "text": "L'Amazone", "correct": false },
+        { "text": "Le Yangtsé", "correct": false }
+      ]
+    },
+    {
+      "text": "Dans quel pays se trouve la Statue de la Liberté ?",
+      "answers": [
+        { "text": "L'Angleterre", "correct": false },
+        { "text": "Les États-Unis", "correct": true },
+        { "text": "Le Canada", "correct": false },
+        { "text": "L'Australie", "correct": false }
+      ]
+    },
+    {
+      "text": "Quelle est la capitale des États-Unis ?",
+      "answers": [
+        { "text": "New York", "correct": false },
+        { "text": "Los Angeles", "correct": false },
+        { "text": "Chicago", "correct": false },
+        { "text": "Washington D.C.", "correct": true }
+      ]
+    }
+  ]
+}
+
